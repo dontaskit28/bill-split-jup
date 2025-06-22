@@ -208,13 +208,15 @@ class GroupDetailScreen extends StatelessWidget {
                       const SizedBox(height: 18),
 
                       // Expense Splits
-                      const Text(
-                        "Expense Splits:",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      expense.splits.length < 2
+                          ? SizedBox()
+                          : const Text(
+                            "Expense Splits:",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                       const SizedBox(height: 6),
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
